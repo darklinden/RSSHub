@@ -34,7 +34,7 @@ async function handler(ctx) {
     // 用于控制返回的章节数量
     const chapterCnt = Number(ctx.req.param('chapterCnt') || 10);
     // 直接调用拷贝漫画的接口
-    const host = 'copymanga.tv';
+    const host = 'mangacopy.com';
     const baseUrl = `https://${host}`;
     const apiBaseUrl = `https://api.${host}`;
     const strBaseUrl = `${apiBaseUrl}/api/v3/comic/${id}/group/default/chapters`;
@@ -76,7 +76,7 @@ async function handler(ctx) {
             chapters = chapters
                 .map(({ comic_path_word, uuid, name, size, datetime_created, ordered /* , index*/ }) => ({
                     link: `${baseUrl}/comic/${comic_path_word}/chapter/${uuid}`,
-                    guid: `https://copymanga.site/comic/${comic_path_word}/chapter/${uuid}`,
+                    guid: `https://mangacopy.com/comic/${comic_path_word}/chapter/${uuid}`,
                     uuid,
                     title: name,
                     size,
